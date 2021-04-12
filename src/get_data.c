@@ -1,4 +1,5 @@
-struct day_value* get_data(char* path){
+#include functons.h
+struct day_value* get_data(char* path,struct day_value* arr){
     //open file
     FILE *fp;
     fp= fopen(path,"r");
@@ -12,7 +13,8 @@ struct day_value* get_data(char* path){
     char tmp[50];
     float open,high,low,close;
     int volume,openint;
-    while(fgets((tmp),sizeof(tmp),fp);){
+	int count = 0;
+    while(fgets((tmp),sizeof(tmp),fp)){
         fscanf(fp,"%[^,],%f,%f,%f,%f,%d,%d",tmp,&open,&high,&low,&close,&volume,&openint);
         struct day_value* new_value= malloc(sizeof(day_value));
         new_value->date=fix_date(tmp);
@@ -22,11 +24,12 @@ struct day_value* get_data(char* path){
         new_value->close=close;
         new_value->volume=volume;
         new_value->openint=openint;
-        list_append(head,tail,new_value);
+        arr= (struct day_value*)realloc(arr,sizeof(struct day_value));
+		arr[count]=new_value;
     }
     
     
     
     
-    return  head;
+    return  arr;
 }

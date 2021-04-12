@@ -1,3 +1,4 @@
+#include "functions.h"
 int fix_date(char* date){
     //time in day from 2000/1/1
     char year[4];
