@@ -6,9 +6,9 @@ int fix_date(char* date);//arguments: takes a date formated : YEAR/MO/DA (year/m
 void list_append(struct day_value* tail,int date,float open,float high,float low,float close,int volume,int openint);
 					//appends the struct day_value to the end of the list 
 					
-struct day_value* get_data(char* path);//argument: path to txt file
-										//returns the head to a list of structures with the data of the txt file
-struct day_value{
+value* get_data(char* path);//argument: path to txt file
+										//returns pointer to list of structs
+typedef struct day_value{
     int date;
     float open;
     float high;
@@ -18,5 +18,5 @@ struct day_value{
     int openint;
     struct day_value* next;
     struct day_value* prev;
-};
+}value;
 #endif
