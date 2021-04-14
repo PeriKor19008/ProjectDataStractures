@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "functions.h"
 int fix_date(char* date){
     //time in day from 2000/1/1
