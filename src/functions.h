@@ -12,11 +12,14 @@ typedef struct day_value{
     struct day_value* next;
     struct day_value* prev;
 }value;
+int bin_search(value* arr,int value,int first,int last);//binary search at volume
+int bin_search(value* arr,int x,int low,int hi);//interpolation search at volume
 int fix_date(char* date);//arguments: takes a date formated : YEAR/MO/DA (year/month/day)
 						 //and returns the time in days sins 2000/01/01
 
 					
 value* get_data(char* path,int* count);//argument: path to txt file
 										//returns pointer to list of structs
+
 
 #endif

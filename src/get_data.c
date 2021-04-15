@@ -34,6 +34,6 @@ value* get_data(char* path,int* count){
 
 
 
-
+    *count=*count-1;
     return  arr;
 }

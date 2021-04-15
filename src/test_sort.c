@@ -1,0 +1,1 @@
+///tests if the array is correctly sorted
