@@ -9,11 +9,11 @@
 //3.na gyrisw toumpa tis seires
 
 
-public void Heap_Sort(value* arr,)
+public void Heap_Sort(value* arr)
 {
 
     //length of the .Close   
-    int size=arr[]
+    int size=arr[]; // thelei douleia
     //opou length prepei na to koitaksw
 
 
