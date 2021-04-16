@@ -17,6 +17,6 @@ int main()
     printf("%f\n%d\n\n",agn[agn_size].open,agn_size);
     printf("%f\n%d\n\n",ainv[ainv_size].open,ainv_size);
     printf("%f\n%d\n\n",ale[ale_size].open,ale_size);
-//eimai sexy pll
+
     
 }
