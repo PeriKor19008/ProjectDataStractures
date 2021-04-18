@@ -16,10 +16,10 @@ int bin_search(value* arr,int value,int first,int last);//binary search at volum
 int bin_search(value* arr,int x,int low,int hi);//interpolation search at volume
 int fix_date(char* date);//arguments: takes a date formated : YEAR/MO/DA (year/month/day)
 						 //and returns the time in days sins 2000/01/01
-
+void Heap_Sort(value* arr,int size); //arguments: array of structs and size of arrray
 					
 value* get_data(char* path,int* count);//argument: path to txt file
 										//returns pointer to list of structs
-
+void heapify(value* arr, int size, float i); //arguments:array of structs, size of array, root of tree
 
 #endif

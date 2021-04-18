@@ -18,5 +18,5 @@ int main()
     printf("%f\n%d\n\n",ainv[ainv_size].open,ainv_size);
     printf("%f\n%d\n\n",ale[ale_size].open,ale_size);
 
-    
+    void Heap_Sort(agn,agn_size);
 }
