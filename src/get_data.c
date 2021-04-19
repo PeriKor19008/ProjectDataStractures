@@ -19,8 +19,8 @@ value* get_data(char* path,int* count){
      *count = 0;
     value new_value;
     while(fgets((tmp),sizeof(tmp),fp)){
-        fscanf(fp,"%[^,],%f,%f,%f,%f,%d,%d",tmp,&open,&high,&low,&close,&volume,&openint);
-        new_value.date=fix_date(tmp);
+        fscanf(fp,"%[^,],%f,%f,%f,%f,%d,%d",new_value.date,&open,&high,&low,&close,&volume,&openint);
+
         new_value.open=open;
         new_value.high=high;
         new_value.low=low;

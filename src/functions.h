@@ -2,18 +2,23 @@
 #define FUNCTIONS_H
 
 typedef struct day_value{
-    int date;
+    char* date[10];
     float open;
     float high;
     float low;
     float close;
     int volume;
     int openint;
-    struct day_value* next;
-    struct day_value* prev;
+
 }value;
+void quick_sort(value* array, int low, int high);
+int partition(value* array, int low, int high);
+void swap(value x,value y);
+void print(value* arr,int size);
+void mergeSort(value* arr, int l, int r);
+void merge (value* arr,int l,int m , int r);
 int bin_search(value* arr,int value,int first,int last);//binary search at volume
-int bin_search(value* arr,int x,int low,int hi);//interpolation search at volume
+int int_search(value* arr,int x,int low,int hi);//interpolation search at volume
 int fix_date(char* date);//arguments: takes a date formated : YEAR/MO/DA (year/month/day)
 						 //and returns the time in days sins 2000/01/01
 
