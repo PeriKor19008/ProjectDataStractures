@@ -15,7 +15,8 @@ int main()
     struct day_value* ale=get_data("ale.us.txt",&ale_size);
 
 
-    quick_sort(agn,0,agn_size);
-    print(agn,agn_size);
-    
+    bubbleSort(agn,agn_size);
+
+    printf("%s",  bis(agn,700603,0,agn_size));
+
 }

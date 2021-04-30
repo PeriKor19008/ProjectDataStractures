@@ -1,28 +1,28 @@
 #include "functions.h"
-void quick_sort(value* list, int left, int right)
+void quick_sort(value* arr, int left, int right)
 {
     int  leftArrow, rightArrow;
     float pivot;
     leftArrow = left;
     rightArrow = right;
-    pivot = list[(left + right) / 2].open;
+    pivot = arr[(left + right) / 2].open;
     do
     {
-        while (list[rightArrow].open > pivot)
+        while (arr[rightArrow].open > pivot)
             --rightArrow;
-        while (list[leftArrow].open < pivot)
+        while (arr[leftArrow].open < pivot)
             ++leftArrow;
         if (leftArrow <= rightArrow)
         {
-            swap(list[leftArrow], list[rightArrow]);
+            swap(&arr[leftArrow], &arr[rightArrow]);
             ++leftArrow;
             --rightArrow;
         }
     }
     while (rightArrow >= leftArrow);
     if (left < rightArrow)
-        quick_sort(list, left, rightArrow);
+        quick_sort(arr, left, rightArrow);
     if (leftArrow < right)
-        quick_sort(list, leftArrow, right);
+        quick_sort(arr, leftArrow, right);
 }
 
