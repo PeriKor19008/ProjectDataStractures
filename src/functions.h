@@ -2,7 +2,7 @@
 #define FUNCTIONS_H
 
 typedef struct day_value{
-    char* date[10];
+    int date;
     float open;
     float high;
     float low;
@@ -11,22 +11,30 @@ typedef struct day_value{
     int openint;
 
 }value;
+typedef struct day_node{
+    int date;
+    int volume;
+    struct day_node* left;
+    struct day_node* right;
+    int height;
+}node;
 void countingsort(value* arr,int size);
 int findbigger(value* arr, int size);
 void bubbleSort(value* arr, int size);
 int testopen(value* arr,int size);
-int testvolume(value* arr,int size);
+int testdate(value* arr,int size);
 int testclose(value* arr,int size);
 void Heap_Sort(value* arr,int size);
 void heapify(value* arr, int size,int i );
 void quick_sort(value* array, int low, int high);
 void swap(value* x,value* y);
 void print(value* arr,int size);
+node* create_avl_tree(value* arr,int low,int hi);
 void mergeSort(value* arr, int l, int r);
 void merge (value* arr,int l,int m , int r);
-char* bis(value* arr,int x,int low,int hi); //binary interpolation search at volume needs sorted array
-char* bin_search(value* arr,int value,int first,int last);//binary search at volume needs sorted array
-char* int_search(value* arr,int x,int low,int hi);//interpolation search at volume needs sorted array
+int bis(value* arr,int x,int low,int hi); //binary interpolation search at volume needs sorted array
+int bin_search(value* arr,int x,int low,int hi);//binary search at volume needs sorted array
+int int_search(value* arr,int x,int low,int hi);//interpolation search at volume needs sorted array
 int fix_date(char* date);//arguments: takes a date formated : YEAR/MO/DA (year/month/day)
 						 //and returns the time in days sins 2000/01/01
 

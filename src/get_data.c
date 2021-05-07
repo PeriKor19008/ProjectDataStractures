@@ -14,13 +14,15 @@ value* get_data(char* path,int* count){
 
     value* arr=NULL;
     char tmp[50];
+    char temp[10];
     float open,high,low,close;
     int volume,openint;
      *count = 0;
     value new_value;
     while(fgets((tmp),sizeof(tmp),fp)){
-        fscanf(fp,"%[^,],%f,%f,%f,%f,%d,%d",new_value.date,&open,&high,&low,&close,&volume,&openint);
+        fscanf(fp,"%[^,],%f,%f,%f,%f,%d,%d",temp,&open,&high,&low,&close,&volume,&openint);
 
+        new_value.date= fix_date(temp);
         new_value.open=open;
         new_value.high=high;
         new_value.low=low;
