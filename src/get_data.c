@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+//#include <string.h>
 #include <stdlib.h>
 #include "functions.h"
 
@@ -33,7 +33,7 @@ value* get_data(char* path,int* count){
         arr[*count]=new_value;
         *count=*count+1;
     }
-
+    fclose(fp);
 
 
     *count=*count-1;
