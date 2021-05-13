@@ -25,5 +25,6 @@ node* create_avl_tree(node* tree,char*path){
         tree=bst_insertion(tree,node1);
     }
 
+    fclose(fp);
     return tree;
 }

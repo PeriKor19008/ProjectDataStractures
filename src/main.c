@@ -8,7 +8,9 @@
 
 int main()
 {
-    value* agn=NULL;
+    bucket** agn= create_hash_table("agn.us.txt",agn);
+
+    /*value* agn=NULL;
     int a;
     node* agn_tree=NULL;
     node* ainv_tree=NULL;
@@ -16,5 +18,5 @@ int main()
 
 
     create_avl_tree(agn_tree,"agn.us.txt");
-    print_inorder(agn_tree);
+    print_inorder(agn_tree);*/
 }
