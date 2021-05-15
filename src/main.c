@@ -6,17 +6,7 @@
 
 
 
-int main()
-{
+int main() {
 
-
-    value* agn=NULL;
-    int a;
-    node* agn_tree=NULL;
-    node* ainv_tree=NULL;
-    node* ale_tree=NULL;
-
-
-    agn_tree=create_avl_tree(agn_tree,"agn.us.txt");
-    print_inorder(agn_tree);
+    mainmenu();
 }

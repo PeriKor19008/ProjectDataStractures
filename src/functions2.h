@@ -20,6 +20,17 @@ typedef struct day_node{
     int height;
 }node;
 
+typedef struct day_bucket2{
+    char date[10];
+    int volume;
+    struct day_bucket2** next_level;
+
+}bucket2;
+
+bucket2* hash_search2(bucket2** table,char* date,int h_mode);
+bucket2** insert_bucket(bucket2** table,bucket2* b,int h_mode);
+bucket2** create_hash_table2(char* path,bucket2** table);
+int d_hash(char* date ,int mode);
 int search_table(bucket** table,char* date);
 bucket* list_search(bucket* list,char* date);
 bucket** create_hash_table(char* path,bucket** table);
