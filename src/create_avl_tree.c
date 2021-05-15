@@ -13,7 +13,7 @@ node* create_avl_tree(node* tree,char*path){
         return(NULL);
     }
 
-    node* node1=(node*) malloc(sizeof(node));
+
     tree=NULL;
     float t0;
     char tmp[50];

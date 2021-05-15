@@ -20,8 +20,8 @@ node* left_rotate(node* x){
     y->left=x;
     x->right=T2;
 
-    x->height=1+max(x->left->height,x->right->height);
-    y->height=1+max(y->left->height,y->right->height);
+    x->height=1+max(height(x->left),height(x->right));
+    y->height=1+max(height(y->left),height(y->right));
 
     return y;
 }

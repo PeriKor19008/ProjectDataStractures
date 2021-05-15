@@ -30,7 +30,7 @@ node* create_avl_tree(node* tree,char*path);
 node* bst_insertion(node* tree,node* node1);
 int max(int x,int y);
 int get_balance(node* node1);
-node* rebalance(node* node,int balance);
+node* rebalance(node* node,int date,int balance);
 node* left_rotate(node* x);
 node* right_rotate(node* y);
 #endif //PROJECT_FUNCTIONS2_H

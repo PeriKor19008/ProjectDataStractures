@@ -23,5 +23,6 @@ node* bst_insertion(node* tree,node* node1){
     int balance=get_balance(tree);
 
     if(balance>1 || balance<-1)
-        tree=rebalance(tree,balance);
+        tree=rebalance(tree,node1->date,balance);
+    return tree;
 }
