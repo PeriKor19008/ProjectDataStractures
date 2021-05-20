@@ -23,6 +23,8 @@ node* create_avl_tree(node* tree,char*path,int mode){
         node* node1=(node*) malloc(sizeof(node));
         fscanf(fp,"%[^,],%f,%f,%f,%f,%d,%d",node1->sdate,&t0,&t0,&t0,&t0,&node1->data,&t0);
         node1->key= fix_date(node1->sdate);
+        //if mode=1 then the keys of the tree is the volume
+        //and data is the date
         if (mode==1){
 
             int t=node1->key;
