@@ -16,6 +16,6 @@ int bin_search(value* arr,int x,int low,int hi){
 
         return bin_search(arr,x,mid+1,hi);
     }
-    return "not found";
+    return -1;
 }
 

@@ -8,7 +8,7 @@ node* bst_insertion(node* tree,node* node1){
         //recursively
         return tree;
     }
-    if(node1->date<=tree->date){
+    if(node1->key<=tree->key){
         tree->left=bst_insertion(tree->left,node1);
         tree->height++;
     }
@@ -23,6 +23,6 @@ node* bst_insertion(node* tree,node* node1){
     int balance=get_balance(tree);
 
     if(balance>1 || balance<-1)
-        tree=rebalance(tree,node1->date,balance);
+        tree=rebalance(tree,node1->key,balance);
     return tree;
 }

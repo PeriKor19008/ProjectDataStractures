@@ -14,5 +14,5 @@ int int_search(value* arr,int x,int low,int hi){
         if(arr[M].date>x)
             return int_search(arr,x,low,M-1);
     }
-    return "not found";
+    return -1;
 }

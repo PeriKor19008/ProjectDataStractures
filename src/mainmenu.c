@@ -14,7 +14,7 @@ void mainmenu(void){
         scanf("%d", &input);
         printf("----------------------------------------\n\n\n");
         if(input==0){
-            return 0; //program will be terminate
+            return ; //program will be terminate
         }
         switch(input){
             case 1:

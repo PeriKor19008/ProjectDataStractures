@@ -5,7 +5,7 @@ void print_inorder(node* tree){
     if(tree==NULL)
         return;
     print_inorder(tree->left);
-    printf("date: %s \nvolume: %d\n\n",tree->sdate,tree->volume);
+    print_node(tree);
     print_inorder((tree->right));
 
 }

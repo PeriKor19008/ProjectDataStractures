@@ -12,9 +12,9 @@ typedef struct day_bucket{
 }bucket;
 
 typedef struct day_node{
-    int date;
+    int key;
     char sdate[10];
-    int volume;
+    int data;
     struct day_node* left;
     struct day_node* right;
     int height;
@@ -36,12 +36,14 @@ bucket* list_search(bucket* list,char* date);
 bucket** create_hash_table(char* path,bucket** table);
 int hash(char* date);
 int height(node* node1);
+node* avl_search(node* tree,int key);
+void print_node(node* n);
 void print_inorder(node* tree);
-node* create_avl_tree(node* tree,char*path);
+node* create_avl_tree(node* tree,char*path,int mode);
 node* bst_insertion(node* tree,node* node1);
 int max(int x,int y);
 int get_balance(node* node1);
-node* rebalance(node* node,int date,int balance);
+node* rebalance(node* node,int key,int balance);
 node* left_rotate(node* x);
 node* right_rotate(node* y);
 #endif //PROJECT_FUNCTIONS2_H
