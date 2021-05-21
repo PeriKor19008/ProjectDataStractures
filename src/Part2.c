@@ -14,9 +14,9 @@ void Part2(void){
     {
         printf("\n\n\n            PART 2\n__________________________________\n");
         printf("Run a file: \n");
-        printf("-AVL tree    (press 1)\n");
-        printf("-Chain hashing    (press 2)\n");
-        printf("-Leave sub menu         (press 0)\n");
+        printf("-AVL tree        (press 1)\n");
+        printf("-Chain hashing   (press 2)\n");
+        printf("-Leave sub menu  (press 0)\n");
         printf("[Press]->");
         int choice;
         scanf("%d", &choice);
@@ -25,7 +25,7 @@ void Part2(void){
         {
             selection();
         }
-        if(choice==2){
+        else if(choice==2){
             Hashing();
         }
 
@@ -56,7 +56,8 @@ void Hashing(void){   //g ypoerwtima part2
         table= create_hash_table("agn.us.txt",table);
         if(choice==1)
         {
-            printf("insert the date you want to search the volume for");
+            printf("Insert the date you want to search the volume for");
+            printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
             int tmp= search_table(table,date);
@@ -65,11 +66,13 @@ void Hashing(void){   //g ypoerwtima part2
             else
                 printf("the volume at %s was %d",date,tmp);
         }
-        if(choice==2){
-            printf("input the date you want to change the volume");
+        else if(choice==2){
+            printf("Input the date you want to change the volume");
+            printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
-            printf("input the new value you want to set");
+            printf("Input the new value you want to set");
+            printf("\n[Press]->");
             int value;
             scanf("%d",&value);
             int tmp=change_volume(table,date,value);
@@ -78,9 +81,10 @@ void Hashing(void){   //g ypoerwtima part2
             else
                 printf("the volume was changed to:%d",tmp);
         }
-        if(choice==3)
+        else if(choice==3)
         {
-            printf("input the date you wish to delete:");
+            printf("Input the date you wish to delete:");
+            printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
             int tmp=delete_bucket(table,date);
@@ -117,7 +121,7 @@ void Volume(void){ //b ypoerwtima part2
         {
             printf("%s", avl_find_min(tree)->sdate);
         }
-        if(choice==2){
+        else if(choice==2){
             printf("%s", avl_find_max(tree)->sdate);
         }
 
@@ -133,26 +137,28 @@ void Volume(void){ //b ypoerwtima part2
 }
 
 void Date(void){  //a ypoerwtima part2
+    node* tree=NULL;
+    tree= create_avl_tree(tree,"agn.us.txt",0);
     for (;;)
     {
         printf("\n\n\n              DATE\n__________________________________\n");
         printf("-print tree inorder                                   (press 1)\n");
-        printf("-Search Value of Volume by your choosen date          (press 1)\n");
+        printf("-Search Value of Volume by your choosen date          (press 2)\n");
         printf("-Change Value of Volume by your choosen date          (press 3)\n");
         printf("-Delete a Value by your choosen date                  (press 4)\n");
         printf("-Leave sub menu                                       (press 0)\n");
         printf("[Press]->");
         int choice;
         scanf("%d", &choice);
-        node* tree=NULL;
-        tree= create_avl_tree(tree,"agn.us.txt",0);
+
         if(choice==1)
         {
             print_inorder(tree);
         }
-        if(choice==2){
+        else if(choice==2){
 
-            printf("input the date you want to search the volume for: ");
+            printf("Input the date you want to search the volume for: ");
+            printf("\n[Press]->");
             char d[10];
             scanf("%s",d);
             int v=search(tree, fix_date(d));
@@ -162,12 +168,14 @@ void Date(void){  //a ypoerwtima part2
                 printf("the volume for that date was:%d",v);
 
         }
-        if(choice==3)
+        else if(choice==3)
         {
-            printf("input the date you want to change the volume");
+            printf("Input the date you want to change the volume");
+            printf("\n[Press]->");
             char date [10];
             scanf("%s",date);
-            printf("input the new volume you want to set");
+            printf("Input the new volume you want to set");
+            printf("\n[Press]->");
             int v;
             scanf("%d",&v);
             node* tmp=avl_change_data(tree, fix_date(date),v);
@@ -176,8 +184,9 @@ void Date(void){  //a ypoerwtima part2
             else
                 printf("change suched new volume:%d",tmp->data);
         }
-        if(choice==4){
-            printf("insert the date you wish to delete");
+        else if(choice==4){
+            printf("Insert the date you wish to delete");
+            printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
             tree=delete_node(tree, fix_date(date));
@@ -212,8 +221,39 @@ void selection(void){
         {
             Date();
         }
-        if(choice==2){
+        else if(choice==2){
             Volume();
+        }
+
+        else if(choice==0)
+            break;
+
+        else
+            printf("You have entered an invalid choice. Please try again\n\n----------------------------------------\n\n");
+
+    }
+
+}
+
+void selection2(void){
+    for (;;)
+    {
+        printf("\n\n\n              HASHING\n__________________________________\n");
+        printf("Select: \n");
+        printf("-Hashing by chains    (press 1)\n");
+        printf("-Hashing by tree      (press 2)\n");
+        printf("-Leave sub menu       (press 0)\n");
+        printf("[Press]->");
+        int choice;
+        scanf("%d", &choice);
+
+
+        if(choice==1)
+        {
+            hash();
+        }
+        else if(choice==2){
+            d_hash();
         }
 
         else if(choice==0)

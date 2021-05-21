@@ -1,6 +1,7 @@
 #include "functions2.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 node* delete_node(node* tree,int key){
     if(tree==NULL)
@@ -25,7 +26,7 @@ node* delete_node(node* tree,int key){
             //two children
             node* tmp=min_val(tree->right);
             tree->key=tmp->key;
-            tree->sdate=tmp->sdate;
+            strcpy(tree->sdate,tmp->sdate);
             tree->data=tmp->data;
             tree->right= delete_node(tree->right,tmp->key);
         }

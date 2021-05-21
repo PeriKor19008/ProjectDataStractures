@@ -26,15 +26,15 @@ void Part1(void){
         {
             open();
         }
-        if(choice==2){
+        else if(choice==2){
             close();
         }
 
-        if(choice==3){
+        else if(choice==3){
             volume();
         }
 
-        if(choice==4){
+        else if(choice==4){
             BIS();
         }
         else if(choice==0)
@@ -90,15 +90,18 @@ void volume(void){  //3o ypoerwtima part1
         printf("\n\n\n          VOLUME FINDING\n__________________________________\n");
         printf("-Binary search         (press 1)\n");
         printf("-Interpolation search  (press 2)\n");
-        printf("-Leave sub menu          (press 0)\n");
+        printf("-Leave sub menu        (press 0)\n");
         printf("[Press]->");
         int choice;
         scanf("%d", &choice);
+        if  (choice==0)
+            break;
         value* arr=NULL;
         int size;
         arr= get_data("agn.us.txt",&size);
         char x[10];
-        printf("input the date you want to search");
+        printf("Input the date you want to search");
+        printf("[Press]->");
         scanf("%s",x);
         if(choice==1)
         {
@@ -108,15 +111,14 @@ void volume(void){  //3o ypoerwtima part1
                 printf("not found");
             printf("%d",v);
         }
-        if(choice==2){
+        else if(choice==2){
             int v= int_search(arr, fix_date(x),0,size);
             if(v==-1)
                 printf("not found");
             printf("%d",v);
         }
 
-        else if(choice==0)
-            break;
+
 
         else
             printf("You have entered an invalid choice. Please try again\n\n----------------------------------------\n\n");
@@ -136,6 +138,8 @@ void close(void){  //2o ypoerwtima part1
         printf("[Press]->");
         int choice;
         scanf("%d", &choice);
+        if (choice==0)
+            break;
         value* arr=NULL;
         int size;
         arr= get_data(choose_file(),&size);
@@ -145,13 +149,11 @@ void close(void){  //2o ypoerwtima part1
             Heap_Sort(arr,size);
             print(arr,size);
         }
-        if(choice==2){
+        else if(choice==2){
             quick_sort(arr,0,size);
             print(arr,size);
         }
 
-        else if(choice==0)
-            break;
 
         else
             printf("You have entered an invalid choice. Please try again\n\n----------------------------------------\n\n");
@@ -169,9 +171,12 @@ void open(void){  //1o ypoerwtima part1
         printf("-Merge Sort     (press 1)\n");
         printf("-Quick Sort     (press 2)\n");
         printf("-Leave sub menu (press 0)\n");
-        printf("[Press]->");
+        printf("\n[Press]->");
         int choice;
+        fflush(stdin);
         scanf("%d", &choice);
+        if(choice==0)
+            break;
         value* arr=NULL;
         int size;
         arr= get_data(choose_file(),&size);
@@ -182,15 +187,14 @@ void open(void){  //1o ypoerwtima part1
             mergeSort(arr,0,size);
             print(arr,size);
         }
-        if(choice==2){
+        else if(choice==2){
             //quick sort
 
             quick_sort(arr,0,size);
             print(arr,size);
         }
 
-        else if(choice==0)
-            break;
+
 
         else
             printf("You have entered an invalid choice. Please try again\n\n----------------------------------------\n\n");
@@ -201,16 +205,22 @@ void open(void){  //1o ypoerwtima part1
 }
 char* choose_file(void){
     int choise;
-    printf("input which file you wish to open\n"
-           "(1) for agn\n (2) for ainv\n (3) for ale\n");
+    printf("\n\nInput which file you wish to open\n");
+    printf("-agn            (press 1)\n");
+    printf("-ainv           (press 2)\n");
+    printf("-ainv           (press 3)\n");
+    printf("[Press]->");
+
     do{
         scanf("%d",&choise);
+        fflush(stdin);
         if(choise==1)
             return "agn.us.txt";
         else if(choise==2)
             return "ainv.us.txt";
         else if(choise==3)
             return "ale.us.txt";
+
         printf("wrong input no such file\n");
     }while( choise!=1&&choise!=2&&choise!=3);
 
