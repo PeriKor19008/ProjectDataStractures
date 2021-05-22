@@ -10,10 +10,10 @@ bucket2** insert_bucket(bucket2** table,bucket2* b,int h_mode){
     }
     if(table[index]->next_level==NULL){
         table[index]->next_level=(bucket2**)malloc(sizeof(bucket2*)*11);
-        table[index]->next_level= insert_bucket(table[index]->next_level,b,h_mode++);
+        table[index]->next_level= insert_bucket(table[index]->next_level,b,h_mode+1);
         return table;
     }
-    table[index]->next_level= insert_bucket(table[index]->next_level,b,h_mode++);
+    table[index]->next_level= insert_bucket(table[index]->next_level,b,h_mode+1);
     return table;
 
 }

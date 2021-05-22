@@ -26,7 +26,8 @@ typedef struct day_bucket2{
     struct day_bucket2** next_level;
 
 }bucket2;
-
+int hash_tree_delete(bucket2** tree,char* date);
+bucket2* replace(bucket2* b,float dist);
 bucket2* hash_search2(bucket2** table,char* date,int h_mode);
 bucket2** insert_bucket(bucket2** table,bucket2* b,int h_mode);
 bucket2** create_hash_table2(char* path,bucket2** table);

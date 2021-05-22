@@ -250,10 +250,10 @@ void selection2(void){
 
         if(choice==1)
         {
-            hash();
+            //hash();
         }
         else if(choice==2){
-            d_hash();
+            //d_hash();
         }
 
         else if(choice==0)
