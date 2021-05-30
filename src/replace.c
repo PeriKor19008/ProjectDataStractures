@@ -27,4 +27,5 @@ bucket2* replace(bucket2* b,float dist){
 
 
 }
+    return replace(level[index],dist);
 }

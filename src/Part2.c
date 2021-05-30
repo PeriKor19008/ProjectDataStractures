@@ -161,11 +161,12 @@ void Date(void){  //a ypoerwtima part2
             printf("\n[Press]->");
             char d[10];
             scanf("%s",d);
-            int v=search(tree, fix_date(d));
-            if(v==-1)
+
+            node* v=search(tree, fix_date(d));
+            if(v==NULL)
                 printf("date not fund");
             else
-                printf("the volume for that date was:%d",v);
+                printf("the volume for that date was:%d",v->data);
 
         }
         else if(choice==3)
@@ -192,8 +193,8 @@ void Date(void){  //a ypoerwtima part2
             tree=delete_node(tree, fix_date(date));
         }
 
-        else if(choice=0)
-            break;
+        else if(choice==0)
+            return;
 
         else
             printf("You have entered an invalid choice. Please try again\n\n----------------------------------------\n\n");

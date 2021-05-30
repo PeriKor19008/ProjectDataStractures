@@ -9,6 +9,10 @@ int hash_tree_delete(bucket2** tree,char* date){
     if(b==NULL)
         return -1;
     bucket2* r=replace(b,dist);
+    if(r==b){
+        free(b);
+        return 1;
+    }
     memcpy(b,r,sizeof(bucket2));
     free(r);
     return 1;

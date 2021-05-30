@@ -41,7 +41,7 @@ bucket** create_hash_table(char* path,bucket** table);
 int hash(char* date);
 int height(node* node1);
 node* avl_change_data(node* tree,int key,int data);
-node* avl_search(node* tree,int key);
+//node* avl_search(node* tree,int key);
 void print_node(node* n);
 void print_inorder(node* tree);
 node* create_avl_tree(node* tree,char*path,int mode);
@@ -53,7 +53,7 @@ node* left_rotate(node* x);
 node* right_rotate(node* y);
 node* min_val(node* tree);
 node* delete_node(node* tree,int key);
-int search(node* tree, int key);
+node* search(node* tree, int key);
 node* avl_find_max(node* tree);
 node* avl_find_min(node* tree);
 #endif //PROJECT_FUNCTIONS2_H
