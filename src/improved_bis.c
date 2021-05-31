@@ -1,7 +1,7 @@
 #include "functions.h"
 #include <math.h>
 
-int bis(value* arr,int x,int low,int hi){
+int improved_bis(value* arr,int x,int low,int hi){
 
 
 
@@ -30,11 +30,11 @@ int bis(value* arr,int x,int low,int hi){
 
 
         if(arr[M].date<x){
-            while((M+(m*i))<size && arr[M+(m*i)].date<=x){
+            while(M+(m*pow(2,i))<=size && arr[M+(int)(m*pow(2,i))].date<=x){
                 i++;
             }
 
-            hi=M+(m*i);
+            hi=M+(m*pow(2,i));
             if(hi>size-1)
                 hi=size-1;
             low=hi-m;
@@ -42,10 +42,10 @@ int bis(value* arr,int x,int low,int hi){
                 low=0;
         }
         if(arr[M].date>x){
-            while(M>=(m*i) && arr[M-(m*i)].date>=x){
+            while(M>=(m*pow(2,i)) && arr[M-(int)(m*pow(2,i))].date>=x){
                 i++;
             }
-            low=M-(m*i);
+            low=M-(m*pow(2,i));
             if(low<0)
                 low=0;
             hi=low+m;

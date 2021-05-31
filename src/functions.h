@@ -12,6 +12,7 @@ typedef struct day_value{
 
 }value;
 
+int improved_bis(value* arr,int x,int low,int hi);
 void countingsort(value* arr,int size);
 int findbigger(value* arr, int size);
 void bubbleSort(value* arr, int size);
