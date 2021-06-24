@@ -7,10 +7,21 @@ int bis(value* arr,int x,int low,int hi){
 
     hi--;
     int size=hi-low+1;
+    if (hi-low<=3){                 //if arr small then leaner search
+        for (int j=0;j<hi-low;j++){
+
+            if (arr[j].date==x)
+                return arr[j].volume;
+        }
+        return -1;
+    }
     long M=low+(size*(x-arr[low].date)/(arr[hi].date-arr[low].date));
+    if (M>size)
+        M=size;
 
 
     while (arr[M].date!=x){
+
         if (hi-low<=3){                 //if arr small then leaner search
             for (int j=0;j<hi-low;j++){
 
@@ -55,6 +66,8 @@ int bis(value* arr,int x,int low,int hi){
 
 
         M=low+((hi-low)*(x-arr[low].date)/(arr[hi].date-arr[low].date));
+        if (M>size)
+            M=size;
     }
     if(arr[M].date==x)
         return arr[M].volume;

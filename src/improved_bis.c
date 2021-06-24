@@ -33,13 +33,18 @@ int improved_bis(value* arr,int x,int low,int hi){
             while(M+(m*pow(2,i))<=size && arr[M+(int)(m*pow(2,i))].date<=x){
                 i++;
             }
+            int j=1;
+            while(arr[(M+(int)(m*pow(2,i)))-j*m].date>x)
+                j++;
 
-            hi=M+(m*pow(2,i));
+            hi=M+(m*pow(2,i))-(j*m);
+            low=hi-m;
+            /*hi=M+(m*pow(2,i));
             if(hi>size-1)
                 hi=size-1;
             low=hi-m;
             if(low<0)
-                low=0;
+                low=0;*/
         }
         if(arr[M].date>x){
             while(M>=(m*pow(2,i)) && arr[M-(int)(m*pow(2,i))].date>=x){

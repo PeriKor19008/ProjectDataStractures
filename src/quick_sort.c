@@ -5,7 +5,7 @@ void quick_sort(value* arr, int left, int right)
     float pivot;
     leftArrow = left;
     rightArrow = right;
-    pivot = arr[(left + right) / 2].open;
+    pivot = arr[right].open;
     do
     {
         while (arr[rightArrow].open > pivot)

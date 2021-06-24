@@ -19,7 +19,7 @@ value* get_data(char* path,int* count){
     int volume,openint;
      *count = 0;
     value new_value;
-    fgets((tmp),sizeof(tmp),fp);
+    //fgets((tmp),sizeof(tmp),fp);
     while(fgets((tmp),sizeof(tmp),fp)){
         fscanf(fp,"%[^,],%f,%f,%f,%f,%d,%d",temp,&open,&high,&low,&close,&volume,&openint);
 

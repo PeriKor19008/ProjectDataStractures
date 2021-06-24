@@ -9,22 +9,26 @@
 int main() {
 
     double time=0;
-
+    clock_t t;
+    int x;
     value* arr=NULL;
     int size=0;
+    int r;
     arr= get_data("agn.us.txt",&size);
+    for (int i=0;i<1000;i++){
 
-    clock_t t=clock();
-    int x= improved_bis(arr, fix_date("2005-03-02"),0,size);
-    printf("%d",x);
-    t=clock()-t;
-    time=  ((double)t)/CLOCKS_PER_SEC;
+        t=clock();
+        x=0;
+        x= fix_date("2005-03-02");
+        improved_bis(arr,x,0,size);
+        t=clock()-t;
+        time=time+  ((double)t)/CLOCKS_PER_SEC;
+    }
 
 
+    printf("%f\n%d",time,r);
 
-    printf("%f\n",time);
 
 
 
 }
-
