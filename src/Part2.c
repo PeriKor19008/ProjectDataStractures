@@ -7,6 +7,7 @@ void Hashing();
 void Volume();
 void Date();
 void selection();
+void selection2();
 
 
 void Part2(void){
@@ -15,7 +16,7 @@ void Part2(void){
         printf("\n\n\n            PART 2\n__________________________________\n");
         printf("Run a file: \n");
         printf("-AVL tree        (press 1)\n");
-        printf("-Chain hashing   (press 2)\n");
+        printf("-hashing         (press 2)\n");
         printf("-Leave sub menu  (press 0)\n");
         printf("[Press]->");
         int choice;
@@ -26,7 +27,7 @@ void Part2(void){
             selection();
         }
         else if(choice==2){
-            Hashing();
+            selection2();
         }
 
         else if(choice==0)
@@ -124,11 +125,11 @@ void Hashing2(void){   //g ypoerwtima part2
             printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
-            int tmp= hash_search2(table,date,0);
-            if(tmp==-1)
+            bucket* tmp= hash_search2(table,date,0);
+            if(tmp==NULL)
                 printf("date not found");
             else
-                printf("the volume at %s was %d",date,tmp);
+                printf("the volume at %s was %d",tmp->date,tmp);
         }
         else if(choice==2){
             printf("Input the date you want to change the volume");
@@ -139,7 +140,7 @@ void Hashing2(void){   //g ypoerwtima part2
             printf("\n[Press]->");
             int value;
             scanf("%d",&value);
-            int tmp=change_volume(table,date,value);
+            int tmp=hash_tree_replace(table,date,value);
             if(tmp==-1)
                 printf("change failed-date not found");
             else
@@ -300,7 +301,7 @@ void selection(void){
 
 }
 
-void selection2(void){
+void selection2(){
     for (;;)
     {
         printf("\n\n\n              HASHING\n__________________________________\n");
