@@ -41,7 +41,7 @@ void Part2(void){
 
 
 
-void Hashing(void){   //g ypoerwtima part2
+void Hashing1(void){   //g ypoerwtima part2
     for (;;)
     {
         printf("\n\n\n              HASHING\n__________________________________\n");
@@ -88,6 +88,70 @@ void Hashing(void){   //g ypoerwtima part2
             char date[10];
             scanf("%s",date);
             int tmp=delete_bucket(table,date);
+            if(tmp==-1)
+                printf("deletion failed-date not found");
+            else
+                printf("deleted successfully");
+        }
+
+        else if(choice==0)
+            break;
+
+        else
+            printf("You have entered an invalid choice. Please try again\n\n----------------------------------------\n\n");
+
+    }
+
+}
+
+
+void Hashing2(void){   //g ypoerwtima part2
+    for (;;)
+    {
+        printf("\n\n\n              HASHING\n__________________________________\n");
+        printf("-Search of Volume's value of the transaction by your choosen date    (press 1)\n");
+        printf("-Change the Volume's Value of the record by your choosen date        (press 2)\n");
+        printf("-Delete a record value by your choosen date                          (press 3)\n");
+        printf("-Leave sub menu                                                      (press 0)\n");
+        printf("[Press]->");
+        int choice;
+        scanf("%d", &choice);
+        bucket2** table=NULL;
+        table= create_hash_table2("agn.us.txt",table);
+        if(choice==1)
+        {
+            printf("Insert the date you want to search the volume for");
+            printf("\n[Press]->");
+            char date[10];
+            scanf("%s",date);
+            int tmp= hash_search2(table,date,0);
+            if(tmp==-1)
+                printf("date not found");
+            else
+                printf("the volume at %s was %d",date,tmp);
+        }
+        else if(choice==2){
+            printf("Input the date you want to change the volume");
+            printf("\n[Press]->");
+            char date[10];
+            scanf("%s",date);
+            printf("Input the new value you want to set");
+            printf("\n[Press]->");
+            int value;
+            scanf("%d",&value);
+            int tmp=change_volume(table,date,value);
+            if(tmp==-1)
+                printf("change failed-date not found");
+            else
+                printf("the volume was changed to:%d",tmp);
+        }
+        else if(choice==3)
+        {
+            printf("Input the date you wish to delete:");
+            printf("\n[Press]->");
+            char date[10];
+            scanf("%s",date);
+            int tmp=hash_tree_delete(table,date);
             if(tmp==-1)
                 printf("deletion failed-date not found");
             else
@@ -241,8 +305,8 @@ void selection2(void){
     {
         printf("\n\n\n              HASHING\n__________________________________\n");
         printf("Select: \n");
-        printf("-Hashing by chains    (press 1)\n");
-        printf("-Hashing by tree      (press 2)\n");
+        printf("-Chain Hahshing       (press 1)\n");
+        printf("-Tree  Hashing        (press 2)\n");
         printf("-Leave sub menu       (press 0)\n");
         printf("[Press]->");
         int choice;
@@ -251,10 +315,10 @@ void selection2(void){
 
         if(choice==1)
         {
-            //hash();
+            Hashing1();
         }
         else if(choice==2){
-            //d_hash();
+            Hashing2();
         }
 
         else if(choice==0)
