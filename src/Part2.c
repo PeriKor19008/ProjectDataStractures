@@ -125,7 +125,7 @@ void Hashing2(void){   //g ypoerwtima part2
             printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
-            bucket* tmp= hash_search2(table,date,0);
+            bucket2* tmp= hash_search2(table,date,0);
             if(tmp==NULL)
                 printf("date not found");
             else
