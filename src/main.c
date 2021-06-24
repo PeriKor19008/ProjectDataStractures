@@ -14,18 +14,19 @@ int main() {
     value* arr=NULL;
     int size=0;
     int r;
+    int y=0;
     arr= get_data("agn.us.txt",&size);
     for (int i=0;i<1000;i++){
 
         t=clock();
         x=0;
-        x= fix_date("2005-03-02");
-        improved_bis(arr,x,0,size);
+        x= fix_date("2010-07-30");
+        y=improved_bis(arr,x,0,size);
         t=clock()-t;
         time=time+  ((double)t)/CLOCKS_PER_SEC;
     }
 
-
+    printf("%d",y);
     printf("%f\n%d",time,r);
 
 
