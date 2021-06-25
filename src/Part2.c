@@ -14,7 +14,7 @@ void Part2(void){
     for (;;)
     {
         printf("\n\n\n            PART 2\n__________________________________\n");
-        printf("Run a file: \n");
+        printf("Choose Data Structure: \n");
         printf("-AVL tree        (press 1)\n");
         printf("-hashing         (press 2)\n");
         printf("-Leave sub menu  (press 0)\n");
@@ -45,11 +45,11 @@ void Part2(void){
 void Hashing1(void){   //g ypoerwtima part2
     for (;;)
     {
-        printf("\n\n\n              HASHING\n__________________________________\n");
-        printf("-Search of Volume's value of the transaction by your choosen date    (press 1)\n");
-        printf("-Change the Volume's Value of the record by your choosen date        (press 2)\n");
-        printf("-Delete a record value by your choosen date                          (press 3)\n");
-        printf("-Leave sub menu                                                      (press 0)\n");
+        printf("\n\n\n    CHAIN_HASHING\n__________________________________\n");
+        printf("-Search Volume by date    (press 1)\n");
+        printf("-Change Volume by date    (press 2)\n");
+        printf("-Delete date record       (press 3)\n");
+        printf("-Leave sub menu           (press 0)\n");
         printf("[Press]->");
         int choice;
         scanf("%d", &choice);
@@ -57,7 +57,7 @@ void Hashing1(void){   //g ypoerwtima part2
         table= create_hash_table("agn.us.txt",table);
         if(choice==1)
         {
-            printf("Insert the date you want to search the volume for");
+            printf("Insert date :");
             printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
@@ -68,11 +68,11 @@ void Hashing1(void){   //g ypoerwtima part2
                 printf("the volume at %s was %d",date,tmp);
         }
         else if(choice==2){
-            printf("Input the date you want to change the volume");
+            printf("Insert date :");
             printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
-            printf("Input the new value you want to set");
+            printf("Insert new value :");
             printf("\n[Press]->");
             int value;
             scanf("%d",&value);
@@ -109,11 +109,11 @@ void Hashing1(void){   //g ypoerwtima part2
 void Hashing2(void){   //g ypoerwtima part2
     for (;;)
     {
-        printf("\n\n\n              HASHING\n__________________________________\n");
-        printf("-Search of Volume's value of the transaction by your choosen date    (press 1)\n");
-        printf("-Change the Volume's Value of the record by your choosen date        (press 2)\n");
-        printf("-Delete a record value by your choosen date                          (press 3)\n");
-        printf("-Leave sub menu                                                      (press 0)\n");
+        printf("\n\n\n     TREE_HASHING\n__________________________________\n");
+        printf("-Search Volume by date    (press 1)\n");
+        printf("-Change Volume by date    (press 2)\n");
+        printf("-Delete date record       (press 3)\n");
+        printf("-Leave sub menu           (press 0)\n");
         printf("[Press]->");
         int choice;
         scanf("%d", &choice);
@@ -121,7 +121,7 @@ void Hashing2(void){   //g ypoerwtima part2
         table= create_hash_table2("agn.us.txt",table);
         if(choice==1)
         {
-            printf("Insert the date you want to search the volume for");
+            printf("Insert date :");
             printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
@@ -129,10 +129,10 @@ void Hashing2(void){   //g ypoerwtima part2
             if(tmp==NULL)
                 printf("date not found");
             else
-                printf("the volume at %s was %d",tmp->date,tmp);
+                printf("the volume at %s was %d",tmp->date,tmp->volume);
         }
         else if(choice==2){
-            printf("Input the date you want to change the volume");
+            printf("Insert date :");
             printf("\n[Press]->");
             char date[10];
             scanf("%s",date);
@@ -173,10 +173,10 @@ void Hashing2(void){   //g ypoerwtima part2
 void Volume(void){ //b ypoerwtima part2
     for (;;)
     {
-        printf("\n\n\n              VOLUME\n__________________________________\n");
-        printf("-Find day(days) by the MINIMUM value of transaction   (press 1)\n");
-        printf("-Find day(days) by the MAXIMUM value of transaction   (press 2)\n");
-        printf("-Leave sub menu                                       (press 0)\n");
+        printf("\n\n\n      VOLUME\n__________________________________\n");
+        printf("-Find MINIMUM value of day(days)   (press 1)\n");
+        printf("-Find MINIMUM value of day(days)   (press 2)\n");
+        printf("-Leave sub menu                    (press 0)\n");
         printf("[Press]->");
         int choice;
         scanf("%d", &choice);
@@ -207,7 +207,7 @@ void Date(void){  //a ypoerwtima part2
     for (;;)
     {
         printf("\n\n\n              DATE\n__________________________________\n");
-        printf("-print tree inorder                                   (press 1)\n");
+        printf("-Print tree inorder                                   (press 1)\n");
         printf("-Search Value of Volume by your choosen date          (press 2)\n");
         printf("-Change Value of Volume by your choosen date          (press 3)\n");
         printf("-Delete a Value by your choosen date                  (press 4)\n");

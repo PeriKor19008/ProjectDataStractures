@@ -12,11 +12,11 @@ void Part1(void){
     for (;;)
     {
         printf("            PART 1\n__________________________________\n");
-        printf("-Classification for open  (press 1)\n");   //change
-        printf("-Classification for close (press 2)\n");   //change
-        printf("-Volume finding           (press 3)\n");
-        printf("-BIS                      (press 4)\n");
-        printf("-Leave sub menu           (press 0)\n");
+        printf("-Sort by open                  (press 1)\n");   //change
+        printf("-Sort by close                 (press 2)\n");   //change
+        printf("-Searching for Volume by date  (press 3)\n");
+        printf("-BIS                           (press 4)\n");
+        printf("-Leave sub menu                (press 0)\n");
         printf("[Press]->");
         int choice;
         scanf("%d", &choice);
@@ -87,7 +87,7 @@ void BIS(void){ //4o ypoerwtima part1
 void volume(void){  //3o ypoerwtima part1
     for (;;)
     {
-        printf("\n\n\n          VOLUME FINDING\n__________________________________\n");
+        printf("\n\n\n       Searching for Volume by date\n__________________________________\n");
         printf("-Binary search         (press 1)\n");
         printf("-Interpolation search  (press 2)\n");
         printf("-Leave sub menu        (press 0)\n");
@@ -131,7 +131,7 @@ void volume(void){  //3o ypoerwtima part1
 void close(void){  //2o ypoerwtima part1
     for (;;)
     {
-        printf("\n\n\n       CLASSIFICATION FOR CLOSE\n__________________________________\n");
+        printf("\n\n\n     SORT BY CLOSE USING:\n__________________________________\n");
         printf("-Heap Sort      (press 1)\n");
         printf("-Counting Sort  (press 2)\n");
         printf("-Leave sub menu (press 0)\n");
@@ -167,7 +167,7 @@ void close(void){  //2o ypoerwtima part1
 void open(void){  //1o ypoerwtima part1
     for (;;)
     {
-        printf("\n\n\n       CLASSIFICATION FOR OPEN\n__________________________________\n");
+        printf("\n\n\n       SORT BY OPEN USING:\n__________________________________\n");
         printf("-Merge Sort     (press 1)\n");
         printf("-Quick Sort     (press 2)\n");
         printf("-Leave sub menu (press 0)\n");
@@ -205,10 +205,10 @@ void open(void){  //1o ypoerwtima part1
 }
 char* choose_file(void){
     int choise;
-    printf("\n\nInput which file you wish to open\n");
+    printf("\n\nChoose which file you wish to open\n");
     printf("-agn            (press 1)\n");
     printf("-ainv           (press 2)\n");
-    printf("-ainv           (press 3)\n");
+    printf("-ale            (press 3)\n");
     printf("[Press]->");
 
     do{
@@ -221,7 +221,7 @@ char* choose_file(void){
         else if(choise==3)
             return "ale.us.txt";
 
-        printf("wrong input no such file\n");
+        printf("wrong input,no such file\n");
     }while( choise!=1&&choise!=2&&choise!=3);
 
 }

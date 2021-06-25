@@ -8,7 +8,7 @@
 
 int main() {
 
-    double time=0;
+    /*double time=0;
     clock_t t;
     int x;
     value* arr=NULL;
@@ -21,13 +21,16 @@ int main() {
         t=clock();
         x=0;
         x= fix_date("2010-07-30");
-        y=bis(arr,x,0,size);
+        y= bis(arr,x,0,size);
         t=clock()-t;
         time=time+  ((double)t)/CLOCKS_PER_SEC;
     }
 
-    printf("%d\n",y);
-    printf("%f\n%d",time,r);
+    printf("%f\n",time);
+    printf("%d\n",y); */
+    mainmenu();
+
+
 
 
 
